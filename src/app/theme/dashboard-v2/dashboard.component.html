@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card cardTitle="{{'ROOT.sample_page' | translate}}" cardClass="card-datatable"
+      headerClass="text-center text-md-left" [hidHeader]="false" [options]="true" [loading]="loadTable">
+      <p class="p-t-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum. </p>
+      <div id="upper-buttons" class="p-2">
+        <div class="row align-items-center pb-sm-1">
+          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+            <div class="form-group mb-2">
+              <label class="form-label m-b-0 f-w-600">Tipe</label>
+              <ng-select [(ngModel)]="selectedTipe" name="selectedTipe" [placeholder]="Pilih" [allowClear]="true"
+                [options]="types" [ngClass]="'custom bg-white'" [notFoundMsg]="'ROOT.no_data_found'|translate">
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+            <div class="form-group mb-2">
+              <label class="form-label m-b-0 f-w-600">Tanggal Mulai</label>
+              <input class="form-control" type="date" [(ngModel)]="selectedStartDate">
+            </div>
+          </div>
+          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+            <div class="form-group mb-2">
+              <button type="button" class="btn btn-sm btn-primary" (click)="getDataByFilter()">
+                Apply Filter
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+            <div class="form-group mb-2">
+              <button type="button" class="btn btn-sm btn-danger" (click)="getAllData()">
+                Reset Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="table-responsive pb-1">
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col" style="padding-left: 10px">No.</th>
+              <th scope="col">Name</th>
+              <th scope="col">Position</th>
+              <th scope="col">Tipe</th>
+              <th scope="col">Tanggal Mulai</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="dataFake.length>=0">
+            <tr *ngFor="let item of dataFake; let i = index;">
+              <th scope="row" style="padding-left: 10px">{{ i+1 }}</th>
+              <td>{{ item.delegatefullname }}</td>
+              <td>{{ item.delegatepositionname }}</td>
+              <td>{{ item.delegationabbreviation }}</td>
+              <td>{{ item.startdate }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </app-card>
+  </div>
+</div>

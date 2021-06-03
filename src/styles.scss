@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* SCSS */
+@import "scss/style";
+
+input[type="radio"], input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+  left: 4px;
+  top: 3px;
+  height: 100%;
+  z-index: 1;
+}
+
+.text-telu {
+  color: #e01a3f !important;
+}
+
+.bg-telu {
+  background-color: #e01a3f !important;
+}
+
+ng-select.lang select-dropdown > div .filter {
+  display: none !important;
+}
+
+input[disabled].form-control, textarea[disabled].form-control, ng-select > div.disabled {
+  background-color: #ffffff !important;
+  color: #4680ff !important;
+  & > div.single > div.placeholder {
+    color: #4680ff !important;
+  }
+}
+
+ng-select > div.disabled > div.single > div.clear, ng-select > div.disabled > div.single > div.toggle {
+  display: none;
+}
+
+ul.navbar-nav.ml-auto {
+  li.lang {
+    width: 93px;
+  }
+  @media (max-width: 991px) {
+    li.lang {
+      width: 75px !important;
+    }
+  }
+}
+
+a.drp-icon.dropdown-toggle.dropdown-toggle {
+  cursor: pointer;
+  &:hover {
+    color: #e01a3f;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.7);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+    background: rgba(17, 17, 17, 0.2);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(17, 17, 17, 0.5);
+}
+
+:root{
+  scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+  scrollbar-width: thin !important;
+}

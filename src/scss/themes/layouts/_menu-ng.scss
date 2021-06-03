@@ -1,0 +1,2537 @@
+// npm menu start
+body {
+  .list-group-item {
+    background-color: #fafafa;
+    &:first-child {
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+    &:last-child {
+      box-shadow: inset 0 -1.5px 2px rgba(0, 0, 0, 0.24);
+    }
+    &:hover a {
+      color: #101b33;
+    }
+  }
+  &.able-pro-dark {
+    .list-group-item {
+      background-color: #0c1221;
+      &:first-child {
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      &:last-child {
+        box-shadow: inset 0 -1.5px 2px rgba(0, 0, 0, 0.24);
+      }
+      &:hover a {
+        color: #FFF;
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(0, 0, 0, 0.29) !important;
+        }
+      }
+    }
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter,
+    .dataTables_wrapper .dataTables_info,
+    .dataTables_wrapper .dataTables_processing,
+    .dataTables_wrapper .dataTables_paginate {
+      color: #adb7be;
+    }
+    input[disabled].form-control, textarea[disabled].form-control, ng-select > div.disabled {
+      background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+    &.background-grd-telu,
+    &.background-img-7,
+    &.background-img-1,
+    &.background-img-2,
+    &.background-img-3,
+    &.background-img-4,
+    &.background-img-5,
+    &.background-img-6 {
+      table.dataTable {
+        &.no-footer {
+          border-color: #0a1120;
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #e01a3f !important;
+          }
+        }
+      }
+      .user-profile-list table.dataTable tbody > tr:hover {
+        > th, > td {
+          color: #ffffff !important;
+          h6, p {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .dataTable[class*="table-"] {
+        thead th {
+          background: #b32942 !important;
+          color: #ffffff;
+        }
+      }
+    }
+    &.background-info {
+      table.dataTable {
+        &.no-footer {
+          border-color: #0a1120;
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $info-color !important;
+          }
+        }
+      }
+      .user-profile-list table.dataTable tbody > tr:hover {
+        > th, > td {
+          color: #ffffff !important;
+          h6, p {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .dataTable[class*="table-"] {
+        thead th {
+          background: #223a6f !important;
+          color: #ffffff;
+        }
+      }
+    }
+    &.background-grd-blue, &.background-blue {
+      table.dataTable {
+        &.no-footer {
+          border-color: #0a1120;
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $primary-color !important;
+          }
+        }
+      }
+      .user-profile-list table.dataTable tbody > tr:hover {
+        > th, > td {
+          color: #ffffff !important;
+          h6, p {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .dataTable[class*="table-"] {
+        thead th {
+          background: #223a6f !important;
+          color: #ffffff;
+        }
+      }
+    }
+    &.background-grd-red, &.background-red {
+      table.dataTable {
+        &.no-footer {
+          border-color: #0a1120;
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $telu-color!important;
+          }
+        }
+      }
+      .user-profile-list table.dataTable tbody > tr:hover {
+        > th, > td {
+          color: #ffffff !important;
+          h6, p {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .dataTable[class*="table-"] {
+        thead th {
+          background: #582727 !important;
+          color: #ffffff;
+        }
+      }
+    }
+    &.background-grd-purple, &.background-purple {
+      table.dataTable {
+        &.no-footer {
+          border-color: #0a1120;
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $purple-color !important;
+          }
+        }
+      }
+      .user-profile-list table.dataTable tbody > tr:hover {
+        > th, > td {
+          color: #ffffff !important;
+          h6, p {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .dataTable[class*="table-"] {
+        thead th {
+          background: #283682 !important;
+          color: #ffffff;
+        }
+      }
+    }
+    &.background-grd-dark, &.background-dark {
+      table.dataTable {
+        &.no-footer {
+          border-color: #0a1120;
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .user-profile-list table.dataTable tbody > tr:hover {
+        > th, > td {
+          color: #ffffff !important;
+          h6, p {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .dataTable[class*="table-"] {
+        thead th {
+          background: #0d162b !important;
+          color: #ffffff;
+        }
+      }
+    }
+    &.background-grd-green, &.background-green {
+      table.dataTable {
+        &.no-footer {
+          border-color: #0a1120;
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $success-color !important;
+            color: #ffffff;
+          }
+        }
+      }
+      .user-profile-list table.dataTable tbody > tr:hover {
+        > th, > td {
+          color: #ffffff !important;
+          h6, p {
+            color: #ffffff !important;
+          }
+        }
+      }
+      .dataTable[class*="table-"] {
+        thead th {
+          background: #0b332a !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.pcoded-header {
+    &[class*="brand-"] {
+        &:not(.brand-default) {
+            .mobile-menu {
+                span,
+                span:after,
+                span:before {
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
+
+.pcoded-navbar {
+    .pcoded-inner-navbar {
+        li {
+            &.active,
+            &:focus,
+            &:hover {
+                > a {
+                    color: #fff;
+                }
+            }
+
+            .pcoded-submenu > app-nav-item > li {
+                &.active,
+                &:focus,
+                &:hover {
+                    > a {
+                        &:before {
+                            // background: #fff;
+                        }
+                    }
+                }
+            }
+
+            &.pcoded-menu-caption:first-child {
+                margin-top: 10px;
+                border-top: 1px solid #344258;
+            }
+
+            &.pcoded-hasmenu .pcoded-submenu {
+                app-nav-collapse,
+                app-nav-item {
+                    + app-nav-collapse,
+                    + app-nav-item {
+                        li > a {
+                            border-top: 1px solid transparentize($menu-dark-text-color,.8);
+                        }
+                    }
+                }
+            }
+        }
+
+        li.pcoded-hasmenu .pcoded-submenu {
+            &:after {
+                height: calc(100% - 30px);
+            }
+
+            li .pcoded-submenu > app-nav-item > li {
+                > a {
+                    &:before {
+                        left: 45px;
+                    }
+                }
+
+                &:after {
+                    left: 45px;
+                }
+            }
+
+            li {
+                .pcoded-submenu:after {
+                    height: calc(100% - 15px);
+                    top: -15px;
+                }
+
+                &.pcoded-trigger,
+                &:hover,
+                .pcoded &.active {
+                    > a:before {
+                        // background-color: $primary-color;
+                    }
+                }
+
+                .pcoded-submenu > app-nav-item > li > a {
+                    padding: 10px 7px 10px 65px;
+                }
+            }
+        }
+
+        app-nav-group:first-child {
+            > .pcoded-menu-caption {
+                border-top: none;
+                margin-top: 0;
+            }
+        }
+
+        app-nav-group > app-nav-collapse > li,
+        app-nav-group > app-nav-item > li {
+            &.active,
+            &.pcoded-trigger {
+                &:after {
+                    // content: "";
+                    // background-color: $primary-color;
+                    // z-index: 1027;
+                    // position: absolute;
+                    // left: 0;
+                    // top: 5px;
+                    // width: 3px;
+                    // height: calc(100% - 5px);
+                }
+
+                > a {
+                    // background: darken($menu-dark-background,4%);
+                    color: #fff;
+                }
+            }
+
+            &.pcoded-trigger,
+            &:hover,
+            .pcoded &.active {
+                &:after {
+                    // content: "";
+                    // background-color: $primary-color;
+                    // z-index: 1027;
+                    // position: absolute;
+                    // left: 0;
+                    // top: 5px;
+                    // width: 3px;
+                    // height: calc(100% - 5px);
+                }
+
+                > a {
+                    // background: darken($menu-dark-background,4%);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &.navbar-collapsed {
+        .pcoded-inner-navbar {
+            .pcoded-menu-caption {
+                &:after {
+                    width: 40px;
+                }
+            }
+
+            > app-nav-group > app-nav-item > li,
+            > app-nav-group > app-nav-collapse > li {
+                > a {
+                    padding: 7px 20px;
+                    width: $Menu-collapsed-width;
+                    transition: all 0.3s ease-in-out;
+
+                    > .pcoded-micon + .pcoded-mtext {
+                        position: absolute;
+                        top: 11px;
+                    }
+
+                    > .pcoded-mtext {
+                        transform: rotateY(-90deg);
+                        transform-origin: 0 0;
+                        opacity: 0;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+
+                &.pcoded-hasmenu {
+                    > a {
+                        &:after {
+                            right: 12px;
+                        }
+                    }
+
+                    .pcoded-submenu {
+                        display: none;
+                    }
+                }
+            }
+
+            > app-nav-group > app-nav-item > li,
+            > app-nav-group > app-nav-collapse > li {
+                &.pcoded-trigger {
+                    .pcoded-submenu {
+                        &:after {
+                            // content: "";
+                            // position: absolute;
+                            // top: 50px;
+                            // left: calc(calc(#{$Menu-collapsed-width} / 2) + 2px);
+                            // width: 1px;
+                            // height: calc(100% - 50px);
+                            // background: transparentize($menu-dark-text-color,0.8);
+                        }
+
+                        li {
+                            a {
+                                color: transparent;
+                                white-space: nowrap;
+                            }
+                        }
+
+                        .pcoded-submenu {
+                            li {
+                                a:before {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .pcoded-inner-navbar {
+                > app-nav-group > app-nav-item > li,
+                > app-nav-group > app-nav-collapse > li {
+                    > a {
+                        width: auto;
+
+                        > .pcoded-mtext {
+                            transform: rotateY(0deg);
+                            opacity: 1;
+
+                            &:after {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    &.pcoded-hasmenu {
+                        > a {
+                            &:after {
+                                transform: rotateX(0deg);
+                            }
+                        }
+
+                        &.pcoded-trigger {
+                            > a {
+                                &:after {
+                                    transform: rotateX(0deg) rotate(90deg);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                > app-nav-group > app-nav-item > li,
+                > app-nav-group > app-nav-collapse > li {
+                    &.pcoded-trigger {
+                        .pcoded-submenu {
+                            &:after {
+                                // display: none;
+                            }
+
+                            li {
+                                a {
+                                    color: inherit;
+                                }
+                            }
+
+                            .pcoded-submenu {
+                                li {
+                                    a:before {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &:not(:hover) {
+            .pcoded-inner-navbar {
+                > app-nav-group {
+                    > app-nav-item,
+                    > app-nav-collapse {
+                        > li {
+                            > a {
+                                width: calc(70px - 20px);
+                                padding: 7px 10px;
+
+                                &:after {
+                                    display: none;
+                                }
+                            }
+
+                            .pcoded-submenu {
+                                a {
+                                    border-top: none;
+                                }
+
+                                li {
+                                    &.active {
+                                        a:before {
+                                            content: "";
+                                            top: 10px;
+                                            left: 31px;
+                                            border-radius: 50%;
+                                            background: #4680ff;
+                                            padding: 5px;
+                                            box-shadow: 0 0 0 5px #fff;
+                                            z-index: 6;
+                                        }
+                                    }
+                                }
+
+                                &:after {
+                                    content: "";
+                                    width: 2px;
+                                    height: 100%;
+                                    position: absolute;
+                                    top: 0;
+                                    left: calc(70px / 2);
+                                    z-index: 5;
+                                    background: rgba(151, 167, 193, 0.2);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.theme-horizontal {
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-hasmenu.active:before,
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-hasmenu.pcoded-trigger:before,
+        .pcoded-inner-navbar app-nav-item > li.pcoded-hasmenu.active:before,
+        .pcoded-inner-navbar app-nav-item > li.pcoded-hasmenu.pcoded-trigger:before {
+            bottom: -24px;
+        }
+        &.menu-light {
+            .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-hasmenu.active:before,
+            .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-hasmenu.pcoded-trigger:before,
+            .pcoded-inner-navbar app-nav-item > li.pcoded-hasmenu.active:before,
+            .pcoded-inner-navbar app-nav-item > li.pcoded-hasmenu.pcoded-trigger:before {
+                color: #fff;
+                bottom: -24px;
+                text-shadow: 0 4px 6px rgba(54, 80, 138, 0.2);
+            }
+        }
+
+        .pcoded-inner-navbar {
+            li {
+                &.active,
+                &:focus,
+                &:hover {
+                    > a {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .pcoded-inner-navbar {
+            > app-nav-item,
+            > app-nav-collapse {
+                position: relative;
+                display: inline-block;
+                list-style: outside none none;
+            }
+
+            > app-nav-group > app-nav-collapse > li,
+            app-nav-item > li {
+                display: inline-block;
+                list-style: outside none none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+
+                > a {
+                    margin: 0;
+                    padding: 8px 15px;
+
+                    > .pcoded-mtext {
+                        position: relative;
+                        top: 0;
+                        margin-right: 5px;
+                    }
+
+                    &:after {
+                        position: relative;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+
+                &.active,
+                &.pcoded-trigger,
+                &:hover {
+                    a {
+                        box-shadow: none;
+                        color: #fff;
+                        background: transparent;
+                    }
+                }
+
+                &.pcoded-hasmenu {
+                    &.active,
+                    &.pcoded-trigger {
+                        &:before {
+                            content: "\6d";
+                            position: absolute;
+                            bottom: -29px;
+                            left: 0;
+                            font-family: "pct";
+                            z-index: 1001;
+                            font-size: 50px;
+                            line-height: 1;
+                            padding-left: calc(50% - 25px);
+                            color: $menu-dark-background;
+                            text-shadow: 0 2px 2px rgba(54, 80, 138, 0.3);
+                            width: 100%;
+                            height: 40px;
+                            transform: scaleX(1.2);
+                        }
+
+                        > .pcoded-submenu {
+                            margin-top: 30px;
+                        }
+                    }
+                }
+
+                &.active,
+                &.pcoded-trigger {
+                    &:after {
+                        content: "";
+                        background-color: $primary-color;
+                        z-index: 1027;
+                        position: absolute;
+                        left: 19px;
+                        top: auto;
+                        bottom: 5px;
+                        width: 23px;
+                        height: 2px;
+                    }
+                }
+
+                &.pcoded-hasmenu.edge {
+                    > .pcoded-submenu {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 991px) {
+    .pcoded-header .container > .collapse:not(.show) .mr-auto,
+    .pcoded-header > .collapse:not(.show) .mr-auto {
+        display: inline-flex;
+        justify-content: center;
+    }
+}
+// npm menu end
+//=========================================================================================
+//=========================================================================================
+//                                  Angulr
+//=========================================================================================
+//=========================================================================================
+
+app-nav-group {
+    app-nav-collapse {
+        > li {
+            overflow: hidden;
+
+            > a {
+                z-index: 999;
+                // background: darken($header-dark-background, 3%);
+                // margin: 0 !important;
+            }
+        }
+    }
+
+    > app-nav-collapse {
+        > li {
+            overflow: hidden;
+
+            > a {
+                z-index: 999;
+                // background: $menu-dark-background;
+                // margin: 0 !important;
+            }
+        }
+    }
+}
+
+.navbar-collapsed:hover .mobile-menu {
+    transform: rotateY(0deg) !important;
+    opacity: 1 !important;
+}
+
+.brand-default .b-brand .b-bg {
+    color: #fff;
+
+    i {
+        color: #fff;
+        background-image: none;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: unset;
+    }
+}
+
+body {
+  // Gradasi
+  &.background-grd-telu,
+  &.background-img-7,
+  &.background-img-1,
+  &.background-img-2,
+  &.background-img-3,
+  &.background-img-4,
+  &.background-img-5,
+  &.background-img-6 {
+    .menu-styler .style-toggler > a:before {
+      background: $telu-color;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: $telu-color;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: linear-gradient(to right, #e01a3f 0%, #676767 100%) !important;
+        color: #ffffff;
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: linear-gradient(to right, #e01a3f 0%, #676767 100%) !important;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: #e01a3f !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid #e01a3f;
+          background: linear-gradient(to right, #e01a3f 0%, #676767 100%) !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-header.header-blue .dropdown .profile-notification .pro-head,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: linear-gradient(to right, #e01a3f 0%, #676767 100%) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #e01a3f 0%, #625d5d 100%) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption {
+        color: $telu-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $telu-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: $telu-color;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(101, 101, 101, 0.22);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #e01a3f;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: #cd2141 !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-grd-blue {
+    .menu-styler .style-toggler > a:before {
+      background: #4680ff;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: #4680ff;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: linear-gradient(to right, #4680ff 0%, #00f2fe 100%) !important;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: #4680ff !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid #4680ff;
+          background: linear-gradient(to right, #4680ff 0%, #00f2fe 100%) !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: linear-gradient(to right, #4680ff 0%, #00f2fe 100%) !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: linear-gradient(to right, #4680ff 0%, #00f2fe 100%) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #4680ff 0%, #00ced8 100%) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $primary-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $primary-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: #4680ff;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(53, 116, 153, 0.22);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #4680ff;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: #4680ff !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-grd-red {
+    .menu-styler .style-toggler > a:before {
+      background: #ff5252;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: #ff5252;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: linear-gradient(to right, #ff5252 0%, #ff9a44 100%) !important;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: #ff5252 !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid #ff5252;
+          background: linear-gradient(to right, #ff5252 0%, #ff9a44 100%) !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: linear-gradient(to right, #ff5252 0%, #ff9a44 100%) !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: linear-gradient(to right, #ff5252 0%, #ff9a44 100%) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #ff5252 0%, #ff8c2b 100%) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $telu-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $telu-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: #ff5252;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(245, 135, 70, 0.22);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #ff5252;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: #ff5252 !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-grd-purple {
+    .menu-styler .style-toggler > a:before {
+      background: #536dfe;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: #536dfe;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: linear-gradient(to right, #536dfe 0%, #00adff 100%) !important;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: #536dfe !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid #536dfe;
+          background: linear-gradient(to right, #536dfe 0%, #00adff 100%) !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: linear-gradient(to right, #536dfe 0%, #00adff 100%) !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: linear-gradient(to right, #536dfe 0%, #00adff 100%) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #536dfe 0%, #592ddc 100%) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $purple-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $purple-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: #536dfe;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(121, 70, 245, 0.22);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #536dfe;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: #5e76fb !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-grd-dark {
+    .menu-styler .style-toggler > a:before {
+      background: #0d162b;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: #aaa;
+    }
+    select-dropdown {
+      .selected {
+        color: #aaa !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: linear-gradient(to right, #0d162b 0%, #1f3054 100%) !important;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: #0d162b !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid #0d162b;
+          background: linear-gradient(to right, #0d162b 0%, #1f3054 100%) !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: linear-gradient(to right, #0d162b 0%, #1f3054 100%) !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: linear-gradient(to right, #0d162b 0%, #1f3054 100%) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #0d162b 0%, #030811 100%) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $menu-dark-text-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $menu-dark-text-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: #0d162b;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(87, 91, 82, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #000000;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: #0d162b !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-grd-green {
+    .menu-styler .style-toggler > a:before {
+      background: $success-color;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: $success-color;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: linear-gradient(to right, #9ccc65 0%, #058466 100%) !important;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: #9ccc65 !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid #9ccc65;
+          background: linear-gradient(to right, #9ccc65 0%, #058466 100%) !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: linear-gradient(to right, #9ccc65 0%, #058466 100%) !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: linear-gradient(to right, #9ccc65 0%, #058466 100%) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: linear-gradient(to right, #9ccc65 0%, #065b47 100%) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $success-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $success-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: #4ba565;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(155, 204, 101, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #058466;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: #4ba565 !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  // Solid
+  &.background-blue {
+    .menu-styler .style-toggler > a:before {
+      background: #4680ff;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: #4680ff;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: #4680ff;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: #4680ff !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid #4680ff;
+          background: #4680ff !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: #4680ff !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: #4680ff !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: #2c63da !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $primary-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $primary-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: #4680ff;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(101, 180, 204, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: #4680ff;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: #4680ff !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-red {
+    .menu-styler .style-toggler > a:before {
+      background: $danger-color;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: $danger-color;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: $danger-color;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: $danger-color !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid $danger-color;
+          background: $danger-color !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: #ff5252 !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: #ff5252 !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: #d73939 !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $danger-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $danger-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: $danger-color;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(255, 134, 48, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $danger-color;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: $danger-color !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-purple {
+    .menu-styler .style-toggler > a:before {
+      background: $purple-color;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: $purple-color;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: $purple-color;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: $purple-color !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid $purple-color;
+          background: $purple-color !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: #536dfe !important;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: #536dfe !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: #5f70cb !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $purple-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $purple-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: $purple-color;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(176, 114, 244, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $purple-color;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: $purple-color !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-info {
+    .menu-styler .style-toggler > a:before {
+      background: $info-color;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: $info-color;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: $info-color;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: $info-color !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid $info-color;
+          background: $info-color !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: $info-color;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: #00bcd4 !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: #009aad !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $info-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $info-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: $info-color;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(82, 152, 174, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $info-color;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: $info-color !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-green {
+    .menu-styler .style-toggler > a:before {
+      background: $success-color;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: $success-color;
+    }
+    select-dropdown {
+      .selected {
+        color: #000000 !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: $success-color;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: $success-color !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid $success-color;
+          background: $success-color !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: $success-color;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: #9ccc65 !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: #87b257 !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $success-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $success-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: $success-color;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(86, 157, 63, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $success-color;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: $success-color !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+  &.background-dark {
+    .menu-styler .style-toggler > a:before {
+      background: $dark-color;
+    }
+    ng-select > div > div.single > div.clear:hover,
+    ng-select > div > div.single > div.toggle:hover {
+      background: transparent;
+      color: $dark-color;
+    }
+    select-dropdown {
+      .selected {
+        color: #aaa !important;
+      }
+      .selected,
+      .highlighted,
+      .selected.highlighted {
+        &:hover {
+          color: #ffffff !important;
+        }
+        background: $dark-color !important;
+        color: #ffffff;
+      }
+    }
+    .table-responsive .dataTables_wrapper .dataTables_paginate {
+      .paginate_button {
+        min-width: 45px;
+        &:hover {
+          color: $dark-color !important;
+          background: none;
+          border: 1px solid transparent;
+          min-width: 45px;
+        }
+        &.current, &.current:hover {
+          color: #ffffff !important;
+          border: 1px solid $dark-color;
+          background: $dark-color !important;
+          min-width: 45px;
+          border-radius: 2px !important;
+        }
+        &.disabled, &.disabled:hover, &.disabled:active {
+          cursor: default;
+          color: rgb(158, 158, 158) !important;
+          border: 1px solid transparent;
+          background: transparent;
+          box-shadow: none;
+          min-width: 45px;
+        }
+      }
+    }
+    .pcoded-header.navbar-light {
+      .dropdown .profile-notification .pro-body li.active,
+      .dropdown .profile-notification .pro-body li:active,
+      .dropdown .profile-notification .pro-body li:focus,
+      .dropdown .profile-notification .pro-body li:hover {
+        background: $dark-color;
+      }
+    }
+    .pcoded-navbar.menu-light {
+      .pcoded-inner-navbar > li.nav-item.pcoded-trigger > a,
+      .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+      .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: #071023 !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: #FFF;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: #04070f !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .pcoded-navbar .pcoded-inner-navbar {
+      .pcoded-menu-caption{
+        color: $menu-dark-text-color !important;
+      }
+
+      app-nav-item > li.nav-item.active > a,
+      > li.nav-item.pcoded-trigger > a,
+      > app-nav-collapse > li.active > a,
+      > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: rgba(0, 0, 0, 0.36) !important;
+        box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        color: $menu-dark-text-color;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background: rgba(0, 0, 0, 0.6) !important;
+          box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        }
+      }
+    }
+    .user-profile-list table tbody tr {
+      &:hover > td, .overlay-edit {
+        color: #fff !important;
+        background: $dark-color;
+        h6, p {
+          color: #fff !important;
+        }
+      }
+    }
+    table {
+      &.dataTable {
+        &.no-footer, tbody td, tbody th, tfoot td, tfoot th, thead td, thead th {
+          border-color: rgba(190, 190, 190, 0.2);
+        }
+        tbody tr {
+          background-color: transparent;
+          &:hover > th, &:hover > td {
+            color: $dark-color;
+          }
+        }
+      }
+      &.dataTable[class*="table-"] {
+        thead th {
+          background: $dark-color !important;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+}
+
+.pcoded-navbar {
+    &.menu-light {
+        .pcoded-inner-navbar app-nav-item > li.nav-item.active > a,
+        .pcoded-inner-navbar app-nav-item > li.nav-item.pcoded-trigger > a {
+            background: #f1f1f1;
+            color: #000;
+        }
+
+        .pcoded-inner-navbar li.pcoded-menu-caption:first-child {
+            border-top-color: #e2e5e8;
+        }
+    }
+
+    &.navbar-collapsed {
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-hasmenu .pcoded-submenu,
+        .pcoded-inner-navbar app-nav-item > li.pcoded-hasmenu .pcoded-submenu {
+            display: block;
+        }
+    }
+
+    .pcoded-inner-navbar {
+        app-nav-item > li.active:after {
+            // top: 0 !important;
+            // height: 100% !important;
+        }
+
+        li {
+            &.pcoded-hasmenu {
+                position: relative;
+
+                .pcoded-submenu {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform-origin: 50% 50%;
+                    transition: transform 0.3s, opacity 0.3s;
+                    transform-style: preserve-3d;
+                    transform: rotateX(-90deg);
+                    position: absolute;
+                    display: block;
+                }
+
+                &.pcoded-trigger {
+                    > .pcoded-submenu {
+                        position: relative;
+                        opacity: 1;
+                        visibility: visible;
+                        transform: rotateX(0deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &.menupos-fixed {
+        height: 100vh;
+        min-height: 100vh;
+
+        .pcoded-inner-navbar {
+            margin-bottom: $header-height;
+        }
+    }
+}
+//============   horizontal menu   =================
+
+.pcoded-navbar {
+    .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+    .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        background: $primary-color !important;
+        color: #fff !important;
+        box-shadow: 0 10px 5px -8px rgba(0, 0, 0, 0.4);
+    }
+    &.menu-light {
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active a,
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a,
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger a,
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li:hover a,
+        .pcoded-inner-navbar app-nav-item > li.active a,
+        .pcoded-inner-navbar app-nav-item > li.pcoded-trigger a,
+        .pcoded-inner-navbar app-nav-item > li:hover a {
+            // background: transparent;
+            // color: #000;
+        }
+    }
+
+    &.menu-light {
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+        .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+            background: $primary-color !important;
+            color: #fff !important;
+            box-shadow: 0 10px 5px -8px rgba(0, 0, 0, 0.4);
+        }
+
+        // .pcoded-inner-navbar.background-grd-telu > app-nav-group > app-nav-collapse > li.active > a,
+        // .pcoded-inner-navbar.background-grd-telu > app-nav-group > app-nav-collapse > li.pcoded-trigger > a {
+        //   background: linear-gradient(to right, #e01a3f 0%, #676767 100%) !important;
+        //   box-shadow: 0 10px 5px -8px rgba(0,0,0,.4);
+        //   color: #FFF;
+        //   transition: 0.2s ease-in-out;
+        //   &:hover {
+        //     background: linear-gradient(to right, #e01a3f 0%, #625d5d 100%) !important;
+        //     box-shadow: 0 10px 5px -7px rgba(0,0,0,.4);
+        //   }
+        // }
+    }
+
+
+
+    &.theme-horizontal {
+        .badge {
+            display: none !important;
+        }
+
+        &.menu-light {
+            .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+            .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a,
+            .pcoded-inner-navbar > app-nav-group > app-nav-item > li.active > a,
+            .pcoded-inner-navbar > app-nav-group > app-nav-item > li.pcoded-trigger > a {
+                background: transparent !important;
+                color: #000 !important;
+                box-shadow: none !important;
+            }
+
+            &.navbar-blue,
+            &.navbar-dark,
+            &.navbar-lightblue,
+            &.navbar-purple,
+            &.navbar-red {
+                .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active > a,
+                .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger > a,
+                .pcoded-inner-navbar > app-nav-group > app-nav-item > li.active > a,
+                .pcoded-inner-navbar > app-nav-group > app-nav-item > li.pcoded-trigger > a {
+                    background: transparent !important;
+                    color: #fff !important;
+                }
+            }
+
+            .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.active a,
+            .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li.pcoded-trigger a,
+            .pcoded-inner-navbar > app-nav-group > app-nav-collapse > li:hover a,
+            .pcoded-inner-navbar app-nav-item > li.active a,
+            .pcoded-inner-navbar app-nav-item > li.pcoded-trigger a,
+            .pcoded-inner-navbar app-nav-item > li:hover a {
+                background: transparent;
+                color: $menu-light-text-color;
+            }
+        }
+
+        .pcoded-mtext {
+            z-index: -1;
+        }
+
+        ~.pcoded-header header {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidenav-horizontal-wrapper {
+            height: $header-height;
+            flex: 0 1 100%;
+            width: 0;
+
+            app-nav-group {
+                display: inline-flex;
+            }
+
+            app-nav-group > app-nav-collapse > li,
+            app-nav-group app-nav-collapse > li {
+                overflow: visible;
+            }
+
+            .pcoded-inner-navbar .pcoded-hasmenu {
+                .pcoded-submenu {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform-origin: 50% 50%;
+                    transition: transform 0.3s, opacity 0.3s;
+                    transform-style: preserve-3d;
+                    transform: rotateX(-90deg);
+                    position: absolute;
+                    min-width: 250px;
+                    display: block;
+                    z-index: 1;
+                    top: 100%;
+                    list-style: outside none none;
+                    margin: 0;
+                    border-radius: 4px;
+                    padding: 15px;
+                    box-shadow: 0 4px 24px 0 rgba(62, 57, 107, 0.18);
+                    background: #fff;
+
+                    .pcoded-submenu {
+                        left: calc(100% + 30px);
+                        top: -10px;
+                    }
+
+                    li {
+                        display: block;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+
+                &.pcoded-trigger {
+                    > .pcoded-submenu {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: rotateX(0deg);
+                    }
+                }
+            }
+        }
+
+        .pcoded-inner-navbar {
+            app-nav-item > li {
+                &.active:after,
+                &.pcoded-trigger:after {
+                    top: auto !important;
+                    height: 2px !important;
+                }
+            }
+        }
+    }
+}
+// ====== [ Active Color start ] ========
+
+.pcoded-navbar {
+    @each $value in $color-active-name {
+        $i: index($color-active-name, $value);
+
+        &[class*="menu-item-icon-style"] {
+            .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.active > a:before {
+                color: $primary-color;
+            }
+        }
+
+        &.active-#{$value} {
+            &[class*="menu-item-icon-style"] {
+                .pcoded-inner-navbar li.pcoded-hasmenu .pcoded-submenu li.active > a:before {
+                    color: nth($color-active-color,$i);
+                }
+            }
+
+            .pcoded-inner-navbar {
+                > app-nav-group > app-nav-collapse li {
+                    &.active,
+                    &:focus,
+                    &:hover {
+                        > a {
+                            color: nth($color-active-color,$i);
+                        }
+                    }
+
+                    .pcoded-submenu > app-nav-item li {
+                        &.active,
+                        &:focus,
+                        &:hover {
+                            > a {
+                                &:before {
+                                    background: nth($color-active-color,$i);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                > app-nav-group > app-nav-collapse > li {
+                    &.active,
+                    &.pcoded-trigger {
+                        &:after {
+                            background-color: nth($color-active-color,$i);
+                        }
+
+                        > a {
+                            background: darken($header-dark-background,6%);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            &.menu-light {
+                .pcoded-inner-navbar {
+                    > li {
+                        &.active,
+                        &.pcoded-trigger {
+                            > a {
+                                background: #f1f1f1;
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+            // horizontal-layout
+            &.theme-horizontal {
+                .pcoded-inner-navbar {
+                    > li {
+                        &,
+                        &.pcoded-hasmenu {
+                            &.active,
+                            &.pcoded-trigger,
+                            &:hover {
+                                > a {
+                                    background: transparent;
+                                }
+                            }
+
+                            .pcoded-submenu > li {
+                                &.active,
+                                &.pcoded-trigger,
+                                &:hover {
+                                    > a {
+                                        color: nth($color-active-color,$i);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ====== [ Active Color end ] ========
