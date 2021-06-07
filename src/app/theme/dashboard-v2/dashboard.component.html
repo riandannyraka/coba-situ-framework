@@ -117,6 +117,11 @@
               [ngModelOptions]="{standalone: true}">
             </ng-select>
           </div>
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Upload</label>
+            <input type="file" accept="application/pdf" formControlName="url" name="url" class="form-control"
+              (change)="onUploadFile($event)">
+          </div>
         </div>
       </div>
     </form>
@@ -165,6 +170,9 @@
               [options]="types" [ngClass]="'custom bg-white'" [notFoundMsg]="'ROOT.no_data_found'|translate"
               [ngModelOptions]="{standalone: true}" [disabled]="formType==='view'">
             </ng-select>
+          </div>
+          <div class="form-group smb-2">
+            <button class="btn btn-sm btn-round has-ripple" (click)="openDoc()">Download</button>
           </div>
         </div>
       </div>

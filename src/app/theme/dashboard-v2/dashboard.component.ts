@@ -41,6 +41,7 @@ export class DashboardComponent implements OnInit {
   public selectedTipeForm = ''
   public selectedStartDate = ''
   public formType = ''
+  public url = null
 
   public formDataPegawai: FormGroup
 
@@ -110,6 +111,7 @@ export class DashboardComponent implements OnInit {
       empPosition: new FormControl(''),
       type: new FormControl(''),
       startDate: new FormControl(''),
+      url: new FormControl(''),
     })
   }
 
@@ -164,6 +166,21 @@ export class DashboardComponent implements OnInit {
       // this.appService.postData(payload).subscribe(response => {})
       // this.dataFake.push(payload)
     }, 3000);
+  }
+
+  openDoc() {
+    let { reportingdocument } = this.rawData
+    if (reportingdocument) window.open(reportingdocument)
+    else alert('DOKUMEN TIDAK DITEMUKAN')
+  }
+
+  onUploadFile(e) {
+    let tempUrl = e.target.files[0]
+    console.log(tempUrl)
+    if (tempUrl.size > 1000000) { this.formDataPegawai.patchValue({ url: '' }); return alert('UKURAN TIDAK DAPAT LEBIH DARI 1MB') }
+    if (!tempUrl.type.includes('pdf')) { this.formDataPegawai.patchValue({ url: '' }); return alert('FORMAT HARUS PDF') }
+    this.url = tempUrl
+    this.formDataPegawai.patchValue({ url: tempUrl.name })
   }
 
   saveData() {
