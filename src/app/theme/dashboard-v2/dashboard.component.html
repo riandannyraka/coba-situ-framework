@@ -9,7 +9,7 @@
         anim id est laborum. </p>
       <div id="upper-buttons" class="p-2">
         <div class="row align-items-center pb-sm-1">
-          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+          <div class="col-12 col-sm-2 text-left pt-2 pt-sm-0">
             <div class="form-group mb-2">
               <label class="form-label m-b-0 f-w-600">Tipe</label>
               <ng-select [(ngModel)]="selectedTipe" name="selectedTipe" [placeholder]="Pilih" [allowClear]="true"
@@ -17,23 +17,30 @@
               </ng-select>
             </div>
           </div>
-          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+          <div class="col-12 col-sm-2 text-left pt-2 pt-sm-0">
             <div class="form-group mb-2">
               <label class="form-label m-b-0 f-w-600">Tanggal Mulai</label>
               <input class="form-control" type="date" [(ngModel)]="selectedStartDate">
             </div>
           </div>
-          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+          <div class="col-12 col-sm-2 text-left pt-2 pt-sm-0">
             <div class="form-group mb-2">
               <button type="button" class="btn btn-sm btn-primary" (click)="getDataByFilter()">
                 Apply Filter
               </button>
             </div>
           </div>
-          <div class="col-12 col-sm-3 text-left pt-2 pt-sm-0">
+          <div class="col-12 col-sm-2 text-left pt-2 pt-sm-0">
             <div class="form-group mb-2">
               <button type="button" class="btn btn-sm btn-danger" (click)="getAllData()">
                 Reset Filter
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-sm-2 text-left pt-2 pt-sm-0">
+            <div class="form-group mb-2">
+              <button type="button" class="btn btn-sm btn-success" (click)="openFormTambah()">
+                Tambah Data
               </button>
             </div>
           </div>
@@ -50,6 +57,7 @@
               <th scope="col">Position</th>
               <th scope="col">Tipe</th>
               <th scope="col">Tanggal Mulai</th>
+              <th scope="col">Aksi</th>
             </tr>
           </thead>
           <tbody *ngIf="dataFake.length>=0">
@@ -59,6 +67,18 @@
               <td>{{ item.delegatepositionname }}</td>
               <td>{{ item.delegationabbreviation }}</td>
               <td>{{ item.startdate }}</td>
+              <td class="center">
+                <div class="btn-group">
+                  <button title="Edit Data" class="btn btn-warning btn-sm btn-round has-ripple"
+                    (click)="openFormEditView(item, 'edit')">
+                    <i class="fa fa-pencil-alt"></i>
+                  </button>
+                  <button title="View Data" class="btn btn-primary btn-sm btn-round has-ripple"
+                    (click)="openFormEditView(item, 'view')">
+                    <i class="ti-eye"></i>
+                  </button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -67,3 +87,101 @@
     </app-card>
   </div>
 </div>
+
+<app-ui-modal #modalTambah [containerClick]="false" [dialogClass]="'modal-md'" [loading]="loadingForm">
+  <div class="app-modal-header">
+    <h5 class="modal-title">Tambah Data</h5>
+    <button type="button" class="close basic-close" data-dismiss="modal" aria-label="Close"
+      (click)="modalTambah.hide();"><span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="app-modal-body">
+    <form [formGroup]="formDataPegawai" class="md-float-material form-material" action="javascript:">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Nama Lengkap</label>
+            <input type="text" class="form-control" formControlName="empName" name="empName" required>
+          </div>
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Posisi</label>
+            <input type="text" class="form-control" formControlName="empPosition" name="empPosition" required>
+          </div>
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Tanggal Mulai</label>
+            <input type="date" class="form-control" formControlName="startDate" name="startDate">
+          </div>
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Tipe</label>
+            <ng-select [(ngModel)]="selectedTipeForm" name="selectedTipeForm" [placeholder]="Pilih" [allowClear]="true"
+              [options]="types" [ngClass]="'custom bg-white'" [notFoundMsg]="'ROOT.no_data_found'|translate"
+              [ngModelOptions]="{standalone: true}">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row align-items-center">
+      <div class="col-12 text-center">
+        <button class="btn btn-success btn-sm btn-round has-ripple" [disabled]="formDataPegawai.invalid"
+          (click)="saveData()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</app-ui-modal>
+
+<app-ui-modal #modalEditView [containerClick]="false" [dialogClass]="'modal-md'" [loading]="loadingForm">
+  <div class="app-modal-header">
+    <h5 *ngIf="formType==='edit'" class="modal-title">Edit Data</h5>
+    <h5 *ngIf="formType==='view'" class="modal-title">View Data</h5>
+    <button type="button" class="close basic-close" data-dismiss="modal" aria-label="Close"
+      (click)="modalEditView.hide();"><span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="app-modal-body">
+    <form [formGroup]="formDataPegawai" class="md-float-material form-material" action="javascript:">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Nama Lengkap</label>
+            <input type="text" class="form-control" formControlName="empName" name="empName" required
+              [readOnly]="formType==='view'">
+          </div>
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Posisi</label>
+            <input type="text" class="form-control" formControlName="empPosition" name="empPosition" required
+              [readOnly]="formType==='view'">
+          </div>
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Tanggal Mulai</label>
+            <input type="date" class="form-control" formControlName="startDate" name="startDate"
+              [readOnly]="formType==='view'">
+          </div>
+          <div class="form-group smb-2">
+            <label class="form-label m-b-0 f-w-600">Tipe</label>
+            <ng-select [(ngModel)]="selectedTipeForm" name="selectedTipeForm" [placeholder]="Pilih" [allowClear]="true"
+              [options]="types" [ngClass]="'custom bg-white'" [notFoundMsg]="'ROOT.no_data_found'|translate"
+              [ngModelOptions]="{standalone: true}" [disabled]="formType==='view'">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row align-items-center">
+      <div class="col-12 text-center">
+        <button *ngIf="formType==='edit'" class="btn btn-success btn-sm btn-round has-ripple"
+          [disabled]="formDataPegawai.invalid" (click)="saveEditData()">
+          Save
+        </button>
+        <button *ngIf="formType==='view'" class="btn btn-secondary btn-sm btn-round has-ripple"
+          (click)="modalEditView.hide();">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</app-ui-modal>

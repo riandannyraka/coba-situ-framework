@@ -4,6 +4,8 @@ import { DataTableDirective } from 'angular-datatables';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { AppService } from 'src/app/_services/app.service';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import * as moment from 'moment'
 
 @Component({
   selector: 'app-dashboard',
@@ -13,11 +15,14 @@ import { AppService } from 'src/app/_services/app.service';
 export class DashboardComponent implements OnInit {
   // Begin - Main Component of dataTable [mandatory]
   @ViewChild(DataTableDirective, { static: false }) public dtElement: DataTableDirective;
+  @ViewChild('modalTambah', { static: true }) public modalTambah: any;
+  @ViewChild('modalEditView', { static: true }) public modalEditView: any;
   public dtOptions: any;
   public dtTrigger = new Subject();
   // End - Main Component of dataTable [mandatory]
 
   public loadTable = false; // Create property for spinner loading
+  public loadingForm = false
 
   public dataFake = [];
   public dataDummy = []
@@ -33,15 +38,21 @@ export class DashboardComponent implements OnInit {
   ]
 
   public selectedTipe = ''
+  public selectedTipeForm = ''
   public selectedStartDate = ''
+  public formType = ''
+
+  public formDataPegawai: FormGroup
 
   // notification property
   public toastData: any;
+  public rawData: any
 
   constructor(
     public broadcasterService: BroadcasterService,
     public translateService: TranslateService,
-    public appService: AppService
+    public appService: AppService,
+    private fb: FormBuilder
   ) {
     this.toastData = {};
     translateService.setDefaultLang(localStorage.getItem('lang'));
@@ -94,10 +105,84 @@ export class DashboardComponent implements OnInit {
         // this.loadTable = false;
       }
     };
+    this.formDataPegawai = this.fb.group({
+      empName: new FormControl(''),
+      empPosition: new FormControl(''),
+      type: new FormControl(''),
+      startDate: new FormControl(''),
+    })
   }
 
   ngOnInit() {
     this.getAllData();
+  }
+
+  openFormTambah() {
+    this.selectedTipeForm = ''
+    this.formDataPegawai.reset()
+    this.modalTambah.show()
+    // this.modalTambah.hide()
+  }
+
+  openFormEditView(data, type) {
+    this.formType = type
+    this.selectedTipeForm = ''
+    this.formDataPegawai.reset()
+    let { delegatefullname, delegatepositionname, delegationtypeid, startdate } = data
+    this.rawData = data
+    this.selectedTipeForm = delegationtypeid && delegationtypeid.toString()
+    this.formDataPegawai.patchValue({
+      empName: delegatefullname,
+      empPosition: delegatepositionname,
+      startDate: startdate ? moment(startdate).format('YYYY-MM-DD') : 'NONE',
+    })
+    this.modalEditView.show()
+  }
+
+  saveEditData() {
+    this.loadingForm = true
+    let { delegationhistoryid } = this.rawData
+    let { empName, empPosition, startDate } = this.formDataPegawai.value
+    let index = this.types.findIndex(e => e.value === this.selectedTipeForm)
+    // let payload = {
+    //   delegatefullname: empName,
+    //   delegatepositionname: empPosition,
+    //   delegationabbreviation: index >= 0 ? this.types[index].label : 'NONE',
+    //   startdate: startDate ? moment(startDate, 'YYYY-MM-DD').format('DD MMM YYYY') : 'NONE'
+    // }
+    setTimeout(() => {
+      let indexData = this.dataFake.findIndex(e => e.delegationhistoryid === delegationhistoryid)
+      this.dataFake[indexData] = {
+        ...this.dataFake[indexData],
+        delegatefullname: empName,
+        delegatepositionname: empPosition,
+        delegationabbreviation: index >= 0 ? this.types[index].label : 'NONE',
+        startdate: startDate ? moment(startDate, 'YYYY-MM-DD').format('DD MMM YYYY') : 'NONE'
+      }
+      this.modalEditView.hide()
+      this.loadingForm = false
+      // this.appService.postData(payload).subscribe(response => {})
+      // this.dataFake.push(payload)
+    }, 3000);
+  }
+
+  saveData() {
+    this.loadingForm = true
+    let { empName, empPosition, startDate } = this.formDataPegawai.value
+    let index = this.types.findIndex(e => e.value === this.selectedTipeForm)
+    let payload = {
+      delegatefullname: empName,
+      delegatepositionname: empPosition,
+      delegationabbreviation: index >= 0 ? this.types[index].label : 'NONE',
+      startdate: startDate ? moment(startDate, 'YYYY-MM-DD').format('DD MMM YYYY') : 'NONE'
+    }
+    console.log(payload)
+    setTimeout(() => {
+      this.modalTambah.hide()
+      this.loadingForm = false
+      this.dataFake.push(payload)
+    }, 3000);
+
   }
 
   getAllData() {
@@ -106,7 +191,7 @@ export class DashboardComponent implements OnInit {
     this.loadTable = true
     let params = 0
     this.appService.getAllDataPegawai(params).subscribe(response => {
-      this.dataFake = response.data;
+      this.dataFake = response.data.splice(1, 10);
       this.dtTrigger.next()
       this.loadTable = false
     }, err => {
@@ -123,7 +208,7 @@ export class DashboardComponent implements OnInit {
     let date = this.selectedStartDate ? this.selectedStartDate : 0
     let params = `0/${tipe}/${date}`
     this.appService.getAllDataPegawai(params).subscribe(response => {
-      this.dataFake = response.data;
+      this.dataFake = response.data.splice(1, 10);;
       this.dtTrigger.next()
       this.loadTable = false
     }, err => {
