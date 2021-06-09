@@ -12,13 +12,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'dashboard-v2',
         pathMatch: 'full'
-      },
-      {
-        path: 'dashboard',
-        loadChildren: './theme/dashboard/dashboard.module#DashboardModule',
-        data: { animation: '1' }
       },
       {
         path: 'dashboard-v2',

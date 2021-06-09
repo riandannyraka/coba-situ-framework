@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
 import { AppService } from 'src/app/_services/app.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { WizardComponent } from 'ng2-archwizard/dist';
 import * as moment from 'moment'
 
 @Component({
@@ -15,14 +16,17 @@ import * as moment from 'moment'
 export class DashboardComponent implements OnInit {
   // Begin - Main Component of dataTable [mandatory]
   @ViewChild(DataTableDirective, { static: false }) public dtElement: DataTableDirective;
+  @ViewChild(WizardComponent, { static: true }) public wizard: WizardComponent;
   @ViewChild('modalTambah', { static: true }) public modalTambah: any;
   @ViewChild('modalEditView', { static: true }) public modalEditView: any;
+  @ViewChild('modalApproval', { static: true }) public modalApproval: any;
   public dtOptions: any;
   public dtTrigger = new Subject();
   // End - Main Component of dataTable [mandatory]
 
   public loadTable = false; // Create property for spinner loading
   public loadingForm = false
+  public viewOnlyApproval = false
 
   public dataFake = [];
   public dataDummy = []
@@ -36,7 +40,7 @@ export class DashboardComponent implements OnInit {
       label: 'PGS'
     }
   ]
-
+  public deskripsiApproval = ''
   public selectedTipe = ''
   public selectedTipeForm = ''
   public selectedStartDate = ''
@@ -117,6 +121,79 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getAllData();
+  }
+
+  handleChangeApproval(event) {
+    this.deskripsiApproval = event
+  }
+
+  handleApproval(type) {
+    if (type === 'approved') {
+      let { delegationhistoryid } = this.rawData
+      let indexData = this.dataFake.findIndex(e => e.delegationhistoryid === delegationhistoryid)
+      this.dataFake[indexData] = {
+        ...this.dataFake[indexData],
+        statusApprovalManager: 'APPROVED',
+        deskripsiApprovalManager: this.deskripsiApproval
+      }
+      this.rawData = this.dataFake[indexData]
+      this.wizard.navigation.goToNextStep()
+    } else {
+      let { delegationhistoryid } = this.rawData
+      let indexData = this.dataFake.findIndex(e => e.delegationhistoryid === delegationhistoryid)
+      this.dataFake[indexData] = {
+        ...this.dataFake[indexData],
+        statusApprovalManager: 'REJECTED',
+        deskripsiApprovalManager: this.deskripsiApproval
+      }
+      this.rawData = this.dataFake[indexData]
+      this.wizard.navigation.goToNextStep()
+    }
+  }
+
+  handleApprovalDir(type) {
+    if (type === 'approved') {
+      let { delegationhistoryid } = this.rawData
+      let indexData = this.dataFake.findIndex(e => e.delegationhistoryid === delegationhistoryid)
+      this.dataFake[indexData] = {
+        ...this.dataFake[indexData],
+        statusApprovalDirektur: 'APPROVED',
+        deskripsiApprovalDirektur: this.deskripsiApproval
+      }
+      this.rawData = this.dataFake[indexData]
+      this.wizard.navigation.goToNextStep()
+    } else {
+      let { delegationhistoryid } = this.rawData
+      let indexData = this.dataFake.findIndex(e => e.delegationhistoryid === delegationhistoryid)
+      this.dataFake[indexData] = {
+        ...this.dataFake[indexData],
+        statusApprovalDirektur: 'REJECTED',
+        deskripsiApprovalDirektur: this.deskripsiApproval
+      }
+      this.rawData = this.dataFake[indexData]
+      this.wizard.navigation.goToNextStep()
+    }
+  }
+
+  handleSubmit() {
+    this.loadingForm = true
+    setTimeout(() => {
+      this.loadingForm = false
+      this.modalApproval.hide()
+    }, 2000);
+  }
+
+  openFormApproval(data) {
+    this.deskripsiApproval = ''
+    this.viewOnlyApproval = false
+    this.wizard.navigation.goToStep(0)
+    this.rawData = data
+    let { statusApprovalDirektur, statusApprovalManager, deskripsiApprovalManager } = this.rawData
+    if (statusApprovalDirektur && statusApprovalManager) {
+      this.viewOnlyApproval = true
+      this.deskripsiApproval = deskripsiApprovalManager
+    }
+    this.modalApproval.show()
   }
 
   openFormTambah() {

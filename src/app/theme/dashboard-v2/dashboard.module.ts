@@ -5,7 +5,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { CommonModule } from '@angular/common';
 import { ToastyModule } from 'ng2-toasty';
 import { NgModule } from '@angular/core';
-
+import { ArchwizardModule } from 'ng2-archwizard/dist';
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
@@ -13,6 +13,7 @@ import { NgModule } from '@angular/core';
     ToastyModule.forRoot(),
     DashboardRoutingModule,
     DataTablesModule,
+    ArchwizardModule,
     SharedModule
   ]
 })

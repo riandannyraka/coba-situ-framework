@@ -77,6 +77,10 @@
                     (click)="openFormEditView(item, 'view')">
                     <i class="ti-eye"></i>
                   </button>
+                  <button title="Approval Data" class="btn btn-success btn-sm btn-round has-ripple"
+                    (click)="openFormApproval(item)">
+                    <i class="icofont icofont-law-document"></i>
+                  </button>
                 </div>
               </td>
             </tr>
@@ -87,6 +91,185 @@
     </app-card>
   </div>
 </div>
+
+<app-ui-modal #modalApproval [containerClick]="false" [dialogClass]="'modal-xl'" [loading]="loadingForm">
+  <div class="app-modal-header">
+    <h5 class="modal-title">Approval Data</h5>
+    <button type="button" class="close basic-close" data-dismiss="modal" aria-label="Close"
+      (click)="modalApproval.hide();"><span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="app-modal-body">
+    <wizard #wizard [navigationMode]="'free'" class="arc-wizard py-2" navBarLayout="large-empty-symbols">
+      <wizard-step stepTitle="Approval Level Manager" navigationSymbol="1">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Nama Lengkap</label>
+              <div class="form-control">{{rawData?rawData.delegatefullname:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Posisi</label>
+              <div class="form-control">{{rawData?rawData.delegatepositionname:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Tanggal Mulai</label>
+              <div class="form-control">{{rawData?rawData.delegationabbreviation:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Tipe</label>
+              <div class="form-control">{{rawData?rawData.startdate:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Alasan</label>
+              <textarea [ngModel]="deskripsiApproval" class="form-control"
+                (ngModelChange)="handleChangeApproval($event)" [readOnly]="viewOnlyApproval"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="align-items-center">
+            <div class="col-12 text-center">
+              <button *ngIf="viewOnlyApproval" class="btn btn-secondary btn-sm btn-round has-ripple" nextStep>
+                Next
+              </button>
+              <button *ngIf="!viewOnlyApproval" class="btn btn-success btn-sm btn-round has-ripple"
+                [disabled]="!deskripsiApproval" (click)="handleApproval('approved')">
+                Approved
+              </button>
+              <button *ngIf="!viewOnlyApproval" class="btn btn-danger btn-sm btn-round has-ripple"
+                [disabled]="!deskripsiApproval" (click)="handleApproval('rejected')">
+                Rejected
+              </button>
+            </div>
+          </div>
+        </div>
+      </wizard-step>
+      <wizard-step stepTitle="Approval Level Direktur" navigationSymbol="2">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Nama Lengkap</label>
+              <div class="form-control">{{rawData?rawData.delegatefullname:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Posisi</label>
+              <div class="form-control">{{rawData?rawData.delegatepositionname:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Tanggal Mulai</label>
+              <div class="form-control">{{rawData?rawData.delegationabbreviation:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Tipe</label>
+              <div class="form-control">{{rawData?rawData.startdate:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Status</label>
+              <div class="form-control">{{rawData?rawData.statusApprovalManager:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Alasan Manager</label>
+              <textarea [ngModel]="deskripsiApproval" class="form-control" readonly></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="align-items-center">
+            <div class="col-12 text-center">
+              <button *ngIf="viewOnlyApproval" class="btn btn-secondary btn-sm btn-round has-ripple" previousStep>
+                Back
+              </button>
+              <button *ngIf="!viewOnlyApproval" class="btn btn-success btn-sm btn-round has-ripple"
+                (click)="handleApprovalDir('approved')">
+                Approved
+              </button>
+              <button *ngIf="!viewOnlyApproval" class="btn btn-danger btn-sm btn-round has-ripple"
+                (click)="handleApprovalDir('rejected')">
+                Rejected
+              </button>
+            </div>
+          </div>
+        </div>
+      </wizard-step>
+      <wizard-step *ngIf="!viewOnlyApproval" stepTitle="Verifikasi Data Approval" navigationSymbol="3">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Nama Lengkap</label>
+              <div class="form-control">{{rawData?rawData.delegatefullname:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Posisi</label>
+              <div class="form-control">{{rawData?rawData.delegatepositionname:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Tanggal Mulai</label>
+              <div class="form-control">{{rawData?rawData.delegationabbreviation:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Tipe</label>
+              <div class="form-control">{{rawData?rawData.startdate:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Status Manager</label>
+              <div class="form-control">{{rawData?rawData.statusApprovalManager:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Status Direktur</label>
+              <div class="form-control">{{rawData?rawData.statusApprovalDirektur:'-'}}</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group smb-2">
+              <label class="form-label m-b-0 f-w-600">Alasan Manager</label>
+              <textarea [ngModel]="deskripsiApproval" class="form-control" readonly></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="align-items-center">
+            <div class="col-12 text-center">
+              <button class="btn btn-secondary btn-sm btn-round has-ripple" previousStep>
+                Back
+              </button>
+              <button class="btn btn-success btn-sm btn-round has-ripple" (click)="handleSubmit()">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </wizard-step>
+    </wizard>
+  </div>
+</app-ui-modal>
 
 <app-ui-modal #modalTambah [containerClick]="false" [dialogClass]="'modal-md'" [loading]="loadingForm">
   <div class="app-modal-header">
