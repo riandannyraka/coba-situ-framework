@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { ToastyModule } from 'ng2-toasty';
 import { NgModule } from '@angular/core';
 import { ArchwizardModule } from 'ng2-archwizard/dist';
+import { ChartModule } from 'angular2-chartjs';
+
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
@@ -14,6 +16,7 @@ import { ArchwizardModule } from 'ng2-archwizard/dist';
     DashboardRoutingModule,
     DataTablesModule,
     ArchwizardModule,
+    ChartModule,
     SharedModule
   ]
 })

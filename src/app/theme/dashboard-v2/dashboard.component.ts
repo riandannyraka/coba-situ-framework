@@ -20,6 +20,79 @@ export class DashboardComponent implements OnInit {
   @ViewChild('modalTambah', { static: true }) public modalTambah: any;
   @ViewChild('modalEditView', { static: true }) public modalEditView: any;
   @ViewChild('modalApproval', { static: true }) public modalApproval: any;
+  public type = 'bar';
+  public dataChart = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "My First dataset",
+        data: [65, 59, 80, 81, 56, 55, 40]
+      }
+    ]
+  };
+  public options = {
+    responsive: true,
+    maintainAspectRatio: false
+  };
+
+  public arrayCharts = [
+    {
+      chartName: "Chart Line",
+      type: 'line',
+      dataChart: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+          {
+            label: "My First dataset",
+            data: [65, 59, 80, 81, 56, 55, 40]
+          }
+        ]
+      }
+    },
+    {
+      chartName: "Chart Bar",
+      type: 'bar',
+      dataChart: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+          {
+            label: "My First dataset",
+            data: [65, 59, 80, 81, 56, 55, 40]
+          }
+        ]
+      }
+    },
+    {
+      chartName: "Chart Pie",
+      type: 'pie',
+      dataChart: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+          {
+            label: "My First dataset",
+            data: [65, 59, 80, 81, 56, 55, 40]
+          },
+          {
+            label: "My First dataset",
+            data: [65, 59, 80, 81, 56, 55, 40]
+          }
+        ]
+      }
+    },
+    {
+      chartName: "Chart Donat",
+      type: 'doughnut',
+      dataChart: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+          {
+            label: "My First dataset",
+            data: [65, 59, 80, 81, 56, 55, 40]
+          }
+        ]
+      }
+    },
+  ]
   public dtOptions: any;
   public dtTrigger = new Subject();
   // End - Main Component of dataTable [mandatory]
