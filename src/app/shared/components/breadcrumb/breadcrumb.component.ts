@@ -24,7 +24,7 @@ export class BreadcrumbComponent implements OnInit {
     private translateService: TranslateService,
     private route: Router,
     private title: Title
-    ) {
+  ) {
     translateService.setDefaultLang(localStorage.getItem('lang'));
     broadcasterService.changeLangBroadcast$.subscribe(res => {
       translateService.setDefaultLang(res.lang);
@@ -81,7 +81,7 @@ export class BreadcrumbComponent implements OnInit {
       } else {
         if (a.type === 'group' && 'children' in a) {
           a.children.forEach((b) => {
-            if (b.type === 'item' && 'url' in b && b.url === activeLink) {
+            if (b.type === 'item' && 'url' in b && activeLink.includes(b.url)) {
               result = [
                 {
                   url: ('url' in b) ? b.url : false,
@@ -94,7 +94,7 @@ export class BreadcrumbComponent implements OnInit {
             } else {
               if (b.type === 'collapse' && 'children' in b) {
                 b.children.forEach((c) => {
-                  if (c.type === 'item' && 'url' in c && c.url === activeLink) {
+                  if (c.type === 'item' && 'url' in c && activeLink.includes(c.url)) {
                     result = [
                       {
                         url: ('url' in b) ? b.url : false,

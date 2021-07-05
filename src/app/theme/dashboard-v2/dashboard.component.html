@@ -61,20 +61,20 @@
           <thead class="thead-light">
             <tr>
               <th scope="col" style="padding-left: 10px">No.</th>
+              <th scope="col">ID</th>
               <th scope="col">Name</th>
-              <th scope="col">Position</th>
-              <th scope="col">Tipe</th>
-              <th scope="col">Tanggal Mulai</th>
+              <!-- <th scope="col">Tipe</th>
+              <th scope="col">Tanggal Mulai</th> -->
               <th scope="col">Aksi</th>
             </tr>
           </thead>
           <tbody *ngIf="dataFake.length>=0">
             <tr *ngFor="let item of dataFake; let i = index;">
               <th scope="row" style="padding-left: 10px">{{ i+1 }}</th>
-              <td>{{ item.delegatefullname }}</td>
-              <td>{{ item.delegatepositionname }}</td>
-              <td>{{ item.delegationabbreviation }}</td>
-              <td>{{ item.startdate }}</td>
+              <td>{{ item.docid }}</td>
+              <td>{{ item.docname }}</td>
+              <!-- <td>{{ item.delegationabbreviation }}</td>
+              <td>{{ item.startdate }}</td> -->
               <td class="center">
                 <div class="btn-group">
                   <button title="Edit Data" class="btn btn-warning btn-sm btn-round has-ripple"
@@ -321,7 +321,7 @@
     <div class="row align-items-center">
       <div class="col-12 text-center">
         <button class="btn btn-success btn-sm btn-round has-ripple" [disabled]="formDataPegawai.invalid"
-          (click)="saveData()">
+          (click)="postDocument()">
           Save
         </button>
       </div>
@@ -363,8 +363,13 @@
             </ng-select>
           </div>
           <div class="form-group smb-2">
-            <button class="btn btn-sm btn-round has-ripple" (click)="openDoc()">Download</button>
+            <label class="form-label m-b-0 f-w-600">Upload</label>
+            <input type="file" accept="application/pdf" formControlName="url" name="url" class="form-control"
+              (change)="onUploadFile($event)">
           </div>
+          <!-- <div class="form-group smb-2">
+            <button class="btn btn-sm btn-round has-ripple" (click)="openDoc()">Download</button>
+          </div> -->
         </div>
       </div>
     </form>
@@ -373,7 +378,7 @@
     <div class="row align-items-center">
       <div class="col-12 text-center">
         <button *ngIf="formType==='edit'" class="btn btn-success btn-sm btn-round has-ripple"
-          [disabled]="formDataPegawai.invalid" (click)="saveEditData()">
+          [disabled]="formDataPegawai.invalid" (click)="updateDocument()">
           Save
         </button>
         <button *ngIf="formType==='view'" class="btn btn-secondary btn-sm btn-round has-ripple"

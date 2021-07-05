@@ -7,6 +7,7 @@ import { AppService } from 'src/app/_services/app.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { WizardComponent } from 'ng2-archwizard/dist';
 import * as moment from 'moment'
+import { DocumentService } from 'src/app/_services/document.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -130,6 +131,7 @@ export class DashboardComponent implements OnInit {
     public broadcasterService: BroadcasterService,
     public translateService: TranslateService,
     public appService: AppService,
+    public documentService: DocumentService,
     private fb: FormBuilder
   ) {
     this.toastData = {};
@@ -280,13 +282,12 @@ export class DashboardComponent implements OnInit {
     this.formType = type
     this.selectedTipeForm = ''
     this.formDataPegawai.reset()
-    let { delegatefullname, delegatepositionname, delegationtypeid, startdate } = data
+    let { docname } = data
     this.rawData = data
-    this.selectedTipeForm = delegationtypeid && delegationtypeid.toString()
     this.formDataPegawai.patchValue({
-      empName: delegatefullname,
-      empPosition: delegatepositionname,
-      startDate: startdate ? moment(startdate).format('YYYY-MM-DD') : 'NONE',
+      empName: docname,
+      empPosition: '',
+      startDate: '',
     })
     this.modalEditView.show()
   }
@@ -356,14 +357,61 @@ export class DashboardComponent implements OnInit {
     if (this.dataFake.length > 0) this.render()
     this.dataFake = []
     this.loadTable = true
-    let params = 0
-    this.appService.getAllDataPegawai(params).subscribe(response => {
-      this.dataFake = response.data.splice(1, 10);
+    let params = ''
+    this.documentService.getAllDokumen(params).subscribe(response => {
+      this.dataFake = response.data
       this.dtTrigger.next()
       this.loadTable = false
     }, err => {
       this.dtTrigger.next()
       this.loadTable = false
+    })
+  }
+
+  postDocument() {
+    let { empName, empPosition, startDate } = this.formDataPegawai.value
+    let payload = {
+      name: empName,
+      desc: empPosition,
+      letternumber: 'TEST',
+      startdate: startDate,
+      enddate: startDate
+    }
+    let formData = new FormData()
+    Object.entries(payload).forEach(([key, value]) => { formData.append(key, value); });
+    formData.append('url', this.url)
+    this.loadingForm = true
+    this.documentService.postDocument(formData).subscribe(res => {
+      if (res && res.status === "Success") {
+        this.modalTambah.hide()
+        this.formDataPegawai.reset()
+        this.loadingForm = false
+        this.getAllData()
+      }
+    })
+  }
+
+  updateDocument() {
+    let { empName } = this.formDataPegawai.value
+    let payload = {
+      docid: this.rawData.docid,
+      name: empName,
+      desc: 'TEST EDIT',
+      letternumber: 'TEST EDIT',
+      startdate: '2021-12-29',
+      enddate: '2021-12-29'
+    }
+    let formData = new FormData()
+    Object.entries(payload).forEach(([key, value]) => { formData.append(key, value); });
+    formData.append('url', this.url)
+    this.loadingForm = true
+    this.documentService.updateDocument(formData).subscribe(res => {
+      if (res && res.status === "Success") {
+        this.modalEditView.hide()
+        this.formDataPegawai.reset()
+        this.loadingForm = false
+        this.getAllData()
+      }
     })
   }
 
@@ -374,8 +422,8 @@ export class DashboardComponent implements OnInit {
     let tipe = this.selectedTipe ? this.selectedTipe : 0
     let date = this.selectedStartDate ? this.selectedStartDate : 0
     let params = `0/${tipe}/${date}`
-    this.appService.getAllDataPegawai(params).subscribe(response => {
-      this.dataFake = response.data.splice(1, 10);;
+    this.documentService.getAllDokumen(params).subscribe(response => {
+      this.dataFake = response.data
       this.dtTrigger.next()
       this.loadTable = false
     }, err => {

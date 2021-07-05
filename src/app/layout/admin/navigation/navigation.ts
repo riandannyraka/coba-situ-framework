@@ -50,7 +50,34 @@ const Approval = {
   icon: 'icofont icofont-law-document'
 };
 
-
+const FDP = {
+  id: 3,
+  title: 'TESTING ARCH WIZARD',
+  type: 'item',
+  url: '/create-fdp',
+  classes: 'nav-item',
+  icon: 'icofont icofont-law-document',
+  children: [
+    {
+      id: '3-1',
+      title: 'TESTING ARCH WIZARD',
+      type: 'item',
+      hidden: true,
+      url: '/create-fdp/data-pelatihan/:id',
+      classes: 'nav-item',
+      icon: 'icofont icofont-law-document',
+    },
+    {
+      id: '3-2',
+      title: 'TESTING ARCH WIZARD',
+      type: 'item',
+      hidden: true,
+      url: '/create-fdp/share/:id',
+      classes: 'nav-item',
+      icon: 'icofont icofont-law-document',
+    }
+  ]
+}
 
 const NavigationItems = [
   {
@@ -68,7 +95,7 @@ export class NavigationItem {
   public items = [];
   constructor(
     private oauthService: OauthService
-  ) {}
+  ) { }
 
   public addOrReplace(item) {
     if (this.items.indexOf(item) === -1) {
@@ -85,7 +112,7 @@ export class NavigationItem {
     if (this.oauthService.checkScope('old-pegawai')) {
       this.addOrReplace(Dashboard);
     }
-
+    this.addOrReplace(FDP);
     return NavigationItems;
   }
 }

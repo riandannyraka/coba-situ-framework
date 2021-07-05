@@ -31,6 +31,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AppComponent } from './app.component';
 import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { DocumentService } from './_services/document.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -81,6 +82,7 @@ export function createTranslateLoader(http: HttpClient) {
     LoginGuard,
     RectorGuard,
     AppService,
+    DocumentService,
     AuthGuard,
     DatePipe,
     {

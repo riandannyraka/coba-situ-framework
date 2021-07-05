@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card cardTitle="{{'ROOT.sample_page' | translate}}" cardClass="card-datatable"
+      headerClass="text-center text-md-left" [hidHeader]="false" [options]="true" [loading]="loadTable">
+      <wizard #wizard class="arc-wizard py-2" disableNavigationBar="true" navBarLayout="large-empty-symbols">
+
+        <wizard-step stepTitle="DATA FSDP" navigationSymbol="1">
+
+        </wizard-step>
+
+        <wizard-step stepTitle="DATA PELATIHAN" navigationSymbol="2">
+          <button class="btn btn-sm btn-secondary" type="button" (click)="goToStep1()">Go to previous step</button>
+          <button class="btn btn-sm btn-primary" type="button" (click)="goToStep3()">Go to next step</button>
+        </wizard-step>
+
+        <wizard-step stepTitle="SHARE" navigationSymbol="3" (stepEnter)="enterStep3($event)">
+          <button class="btn btn-sm btn-secondary" type="button" (click)="goToStep2()">Go to previous step</button>
+        </wizard-step>
+
+      </wizard>
+    </app-card>
+  </div>
+</div>

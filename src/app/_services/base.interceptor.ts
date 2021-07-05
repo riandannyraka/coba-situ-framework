@@ -22,7 +22,7 @@ export class BaseInterceptor implements HttpInterceptor {
       tap((event) => {}),
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
-          this.injector.get(OauthService).broadcastLogout();
+          // this.injector.get(OauthService).broadcastLogout();
           this.broadcasterService.notifBroadcast(true, {
             title: 'Failed',
             msg: `You're not authenticate`,
@@ -37,7 +37,7 @@ export class BaseInterceptor implements HttpInterceptor {
           this.router.navigate(['/error/403']);
         } else if (error.status === 405) {
           console.log('not allow');
-          this.injector.get(OauthService).broadcastLogout();
+          // this.injector.get(OauthService).broadcastLogout();
           return throwError(error);
         } else if (error.status === 504) {
           this.broadcasterService.notifBroadcast(true, {

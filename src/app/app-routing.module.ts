@@ -16,6 +16,12 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        path: 'create-fdp',
+        canActivate: [PegawaiGuard],
+        loadChildren: './theme/create-fdp/create-fdp.module#CreateFdpModule',
+        data: { animation: '1' }
+      },
+      {
         path: 'dashboard-v2',
         canActivate: [PegawaiGuard],
         loadChildren: './theme/dashboard-v2/dashboard.module#DashboardModule',

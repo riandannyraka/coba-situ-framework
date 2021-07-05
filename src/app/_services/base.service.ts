@@ -51,6 +51,10 @@ export class BaseService {
     return this.http.post(url, query, httpOptions);
   }
 
+  protected postApiPlain(url, request) {
+    return this.http.post(url, request);
+  }
+
   protected putApi(url, request?) {
     return this.http.put(url, request);
   }
